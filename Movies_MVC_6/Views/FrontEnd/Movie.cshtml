@@ -1,0 +1,34 @@
+﻿@model Movies_MVC_6.Models.Movie
+
+@{
+    ViewData["Title"] = "Movie";
+}
+
+<div class="col-10" name="layout">
+        <div class="row bg-danger">
+            <article class="col-4 bg-danger border-end-0">
+                <h1 class="text">@Html.DisplayNameFor(model => model.Sinopse)</h1>
+                <p>@Html.DisplayFor(model => model.Sinopse)</p>
+            </article>
+            <div class="col-5" id="trailer">
+                <iframe width="500" height="315" src="@Html.DisplayFor(model=>model.YoutubeLink)"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+        <article class="row" id="section1">
+            <div class="col">
+                <span id="subtitle" class="fw-bold">@Html.DisplayNameFor(model => model.Director): </span><span>@Html.DisplayFor(model => model.Director)</span>
+                <hr />
+                <span id="subtitle" class="fw-bold">@Html.DisplayNameFor(model => model.FeaturedSong): </span><span>@Html.DisplayFor(model => model.FeaturedSong).</span>
+                <hr />
+                <span id="subtitle" class="fw-bold">@Html.DisplayNameFor(model => model.BoxOffice): </span><span> $@Html.DisplayFor(model => model.BoxOffice) million USD</span>
+                <hr />
+                <span id="subtitle" class="fw-bold">@Html.DisplayNameFor(model => model.Cinematography): </span><span>@Html.DisplayFor(model => model.Cinematography)</span>
+                <hr />
+                <span id="subtitle" class="fw-bold">@Html.DisplayNameFor(model => model.MovieAward): </span><span>@Html.DisplayFor(model => model.MovieAward)</span>
+            </div>
+        </article>
+
+    </div>

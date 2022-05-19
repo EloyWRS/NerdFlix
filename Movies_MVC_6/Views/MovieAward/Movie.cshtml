@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Movies_MVC_6.Models.MovieAward>
+
+@{
+    ViewData["Title"] = "Movie";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+    @foreach (var award in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelAward => award.Award.Type)
+            </td>
+        </tr>
+    }
+}
+
+

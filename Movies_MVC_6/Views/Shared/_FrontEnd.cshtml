@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - TugaFlix</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    @*@RenderBody()*@
+    @*<header class="text-danger">
+        <div class="row h-25">
+            <div class="col text-center bg-dark">
+                <h1>TugaFlix</h1>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="row h-50" id="layout">
+            <nav class="navbar navbar-nav col-2 bg-dark text-danger" name="navbar">
+                <div class="navbar-text text-center text-danger" id="navbarText">
+                    <a class="nav-item nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    <a class="nav-item nav-link" asp-area="" asp-controller="Movie" asp-action="Index">Movies</a>
+                    <a href="#" class="nav-item nav-link">Previous Movie</a>
+                    <a href="#" class="nav-item nav-link">Not an option</a>
+                </div>
+            </nav>*@
+            @RenderBody()
+        @*</div>
+    </main>
+    <footer>
+        <div class="row h-25 bg-dark" id="foot">
+            <div class="text-white text-center" id="">
+                <p>This is my footer</p>
+            </div>
+        </div>
+    </footer>*@
+
+    @*@RenderSection("Footer", required: false)*@
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

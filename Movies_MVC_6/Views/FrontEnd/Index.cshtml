@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Movies_MVC_6.Models.Movie>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_FrontEnd.cshtml";
+}
+
+<body class="container-fluid">
+
+    <table class="table">        
+        <tbody>
+            
+            @foreach (var item in Model)
+            {
+                <tr class="text-center">
+                    <td>
+                        <a asp-controller="FrontEnd" asp-action="Movie" asp-route-id="@item.MovieID">@Html.DisplayFor(modelItem => item.Name)</a>  
+                    </td>                   
+                  
+                </tr>
+            }
+        </tbody>
+    </table>
+    </body>
+
+    @*<div class="col-10" name="layout">
+            <div class="row bg-danger">
+                <article class="col-4 bg-danger border-end-0">
+                    <h1 class="text">Sinopse</h1>
+                    <p>@Html.DisplayNameFor(model => model.Name)</p>
+                </article>
+                <div class="col-5" id="trailer">
+                    <iframe width="500" height="315" src="https://www.youtube.com/embed/YoHD9XEInc0"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                </div>
+            </div>
+            <article class="row" id="section1">
+                <div class="col">
+                    <span id="subtitle" class="fw-bold">Director: </span><span>Christopher Nolan</span>
+                    <hr />
+                    <span id="subtitle" class="fw-bold">Featured song: </span><span>S.T.A.Y.</span>
+                    <hr />
+                    <span id="subtitle" class="fw-bold">Box office: </span><span> $836.8 million USD</span>
+                    <hr />
+                    <span id="subtitle" class="fw-bold">Cinematography: </span><span>Wally Pfister</span>
+                    <hr />
+                    <span id="subtitle" class="fw-bold"><span></span> </span><span>Academy Award for Best Visual Effects</span>
+                </div>
+            </article>
+
+        </div>*@
