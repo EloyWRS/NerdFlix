@@ -87,6 +87,44 @@ body {*/
     display: block;
     overflow-y: scroll;
 }
+#text {
+    margin-left:7%;
+    margin-right:7%;
+    width:100%;
+    display: inline-block;
+}
+
+#blockcenter {
+    position: relative;
+    justify-content:center;       
+    display: block;    
+}
+#trailerblock {
+    margin-left: 30%;
+    display: inline-block;
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 100%; /* 16:9 */
+    padding-top: 100%;
+    margin: auto;
+
+}
+
+    .video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+.container {
+    width: 100%;
+    max-width: 300px;
+    margin: auto;
+}
 @media (min-width: 992px) {
     .seven-cols .col-md-1,
     .seven-cols .col-sm-1,

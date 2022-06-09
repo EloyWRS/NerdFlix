@@ -1,7 +1,6 @@
-﻿@model IEnumerable<Movies_MVC_6.Models.Movie>
+﻿@model Movies_MVC_6.Models.MovieViewModels.MovieIndexData
 @{
-    ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_FrontEnd.cshtml";
+    ViewData["Title"] = "Index";    
 }
 
 <body class="container-fluid">
@@ -9,13 +8,12 @@
     <table class="table">        
         <tbody>
             
-            @foreach (var item in Model)
+            @foreach (var item in Model.Movies)
             {
                 <tr class="text-center">
                     <td>
-                        <a asp-controller="FrontEnd" asp-action="Movie" asp-route-id="@item.MovieID">@Html.DisplayFor(modelItem => item.Name)</a>  
-                    </td>                   
-                  
+                        <a asp-controller="AvailableMovies" asp-action="Movie" asp-route-id="@item.MovieID">@Html.DisplayFor(modelItem => item.Name)</a>  
+                    </td>                
                 </tr>
             }
         </tbody>

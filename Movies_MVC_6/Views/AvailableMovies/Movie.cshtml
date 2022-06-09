@@ -1,0 +1,88 @@
+﻿@model Movies_MVC_6.Models.MovieViewModels.MovieIndexData
+@{
+    ViewData["Title"] = "Movie";
+}
+
+<div class="row" name="layout">
+    <div class="container-fluid bg-danger">
+        <article class="row" id="text">
+            <h1 class="text">Sinopse</h1>
+            <p>
+                @foreach (var item in Model.Movies)
+                {
+                    @Html.DisplayFor(modelItem => item.Sinopse)
+                }
+            </p>
+        </article>
+    </div>
+    <div class="col-sm-4"></div>
+    <div class="row bg-secondary">
+        <iframe width="500" height="315" src="
+                        @foreach (var item in Model.Movies)
+                        {
+                            @Html.DisplayFor(modelItem=>item.YoutubeLink)
+                        }
+                        "
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+        </iframe>
+    </div>
+    <div class="container-fluid bg-danger">
+        <div class="row">
+            <table class="col-7" id="text">
+                <tr>
+                    <th> Director: </th>
+                    <th> Cinematography</th>
+                </tr>
+                <tr class="align-text-top">
+                    <td>
+                        @foreach (var item in Model.Movies)
+                        {
+                        @Html.DisplayFor(modelItem => item.Director)
+                        }
+                    </td>
+                    <td>
+                        @foreach (var item in Model.Movies)
+                        {
+                        @Html.DisplayFor(modelItem => item.Cinematography)
+                        }
+                    </td>
+                </tr>
+                <tr>
+                    <th>BoxOffice: </th>
+                    <th>FeaturedSong: </th>
+                </tr>
+                <tr>
+                    <td>
+                        $@foreach (var item in Model.Movies)
+                        {
+                        @Html.DisplayFor(modelItem => item.BoxOffice)
+                        }
+                        million USD
+                    </td>
+                    <td>
+                        @foreach (var item in Model.Movies)
+                        {
+                        @Html.DisplayFor(modelItem => item.FeaturedSong)
+                        }
+                    </td>
+                </tr>
+            </table>
+            <table class="col-3" id="text">
+                <tr>
+                    <th> Awards</th>
+                    <td>
+                        @foreach (var item in Model.Movies)
+                        {
+                        @foreach (var award in item.MovieAward)
+                        {
+                        @award.Award.Type <br />
+                        }
+                        }
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

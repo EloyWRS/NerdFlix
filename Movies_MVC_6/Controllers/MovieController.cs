@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Movies_MVC_6.Data;
 using Movies_MVC_6.Models;
+using Movies_MVC_6.Models.MovieViewModels;
 
 namespace Movies_MVC_6.Controllers
 {
@@ -22,7 +23,14 @@ namespace Movies_MVC_6.Controllers
         // GET: Movie
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Movies.ToListAsync());
+            var viewModel = new MovieIndexData();
+            viewModel.Movies = await _context.Movies
+                .Include(m => m.MovieAward)
+                .ThenInclude(m => m.Award)
+                .AsNoTracking()
+                .OrderBy(m => m.MovieID)
+                .ToListAsync();
+            return View(viewModel);
         }
 
         // GET: Movie/Details/5
