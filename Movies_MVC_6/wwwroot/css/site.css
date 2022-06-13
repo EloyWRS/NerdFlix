@@ -77,6 +77,22 @@ body {*/
 
 /*THIS IS MY CSS - TBSE*/
 
+th {
+    padding-right: 15px;
+    padding-bottom: 2px;
+    color: rgb(229, 9, 20);
+}
+td {
+    padding-right: 15px;
+    padding-bottom: 15px;
+    color: azure;
+}
+h1 {
+    color: rgb(229, 9, 20);
+}
+p {
+    color: azure;
+}
 .SinopseScrollBox {
     height: 50px;
     display: block;
@@ -88,12 +104,12 @@ body {*/
     overflow-y: scroll;
 }
 #text {
-    margin-left:7%;
-    margin-right:7%;
-    width:100%;
+    margin-left: 7%;
+    margin-right: 7%;
+    width: 100%;
     display: inline-block;
+    color: white;
 }
-
 #blockcenter {
     position: relative;
     justify-content:center;       
@@ -103,13 +119,20 @@ body {*/
     margin-left: 30%;
     display: inline-block;
 }
-
+.bg-basic {
+    background-color: rgb(20, 20, 20);
+}
+.bg-lightup {
+    background-color: azure;
+}
+.title {
+    color: rgb(229, 9, 20);
+}
 .video-wrapper {
     position: relative;
     padding-bottom: 100%; /* 16:9 */
     padding-top: 100%;
     margin: auto;
-
 }
 
     .video-wrapper iframe {
@@ -120,11 +143,6 @@ body {*/
         height: 100%;
     }
 
-.container {
-    width: 100%;
-    max-width: 300px;
-    margin: auto;
-}
 @media (min-width: 992px) {
     .seven-cols .col-md-1,
     .seven-cols .col-sm-1,

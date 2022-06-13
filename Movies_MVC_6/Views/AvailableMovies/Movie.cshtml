@@ -4,9 +4,9 @@
 }
 
 <div class="row" name="layout">
-    <div class="container-fluid bg-danger">
+    <div class="container-fluid bg-basic">
         <article class="row" id="text">
-            <h1 class="text">Sinopse</h1>
+            <h1 class="text title">Sinopse</h1>
             <p>
                 @foreach (var item in Model.Movies)
                 {
@@ -28,26 +28,25 @@
                 allowfullscreen>
         </iframe>
     </div>
-    <div class="container-fluid bg-danger">
-        <div class="row">
-            <table class="col-7" id="text">
+    <div class="container-fluid bg-basic">        
+            <table class="col-5" id="text">
                 <tr>
                     <th> Director: </th>
-                    <th> Cinematography</th>
+                    <th> Cinematography</th>                    
                 </tr>
                 <tr class="align-text-top">
                     <td>
                         @foreach (var item in Model.Movies)
                         {
-                        @Html.DisplayFor(modelItem => item.Director)
+                            @Html.DisplayFor(modelItem => item.Director)
                         }
                     </td>
                     <td>
                         @foreach (var item in Model.Movies)
                         {
-                        @Html.DisplayFor(modelItem => item.Cinematography)
+                            @Html.DisplayFor(modelItem => item.Cinematography)
                         }
-                    </td>
+                    </td>                    
                 </tr>
                 <tr>
                     <th>BoxOffice: </th>
@@ -57,32 +56,30 @@
                     <td>
                         $@foreach (var item in Model.Movies)
                         {
-                        @Html.DisplayFor(modelItem => item.BoxOffice)
-                        }
-                        million USD
+                            @Html.DisplayFor(modelItem => item.BoxOffice)
+                        }million USD
                     </td>
                     <td>
                         @foreach (var item in Model.Movies)
                         {
-                        @Html.DisplayFor(modelItem => item.FeaturedSong)
+                            @Html.DisplayFor(modelItem => item.FeaturedSong)
                         }
-                    </td>
+                    </td>                    
                 </tr>
-            </table>
-            <table class="col-3" id="text">
                 <tr>
-                    <th> Awards</th>
+                    <th>Awards</th>
+                </tr>
+                <tr>
                     <td>
                         @foreach (var item in Model.Movies)
                         {
-                        @foreach (var award in item.MovieAward)
-                        {
-                        @award.Award.Type <br />
-                        }
+                            @foreach (var award in item.MovieAward)
+                            {
+                                @award.Award.Type <br />
+                            }
                         }
                     </td>
                 </tr>
-            </table>
-        </div>
+            </table>                    
     </div>
 </div>
