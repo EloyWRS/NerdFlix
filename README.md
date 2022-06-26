@@ -20,6 +20,6 @@ which stores collections of both Movies and Awards.
 In this way, I was able to call this new class as model for any given view and access every property correctly. 
 
 Now I have a fourth goal which is to store a cover image for each movie. 
-I also want to note that my main focus on this project is the backend and getting the app to work just as I want it.
+I also want to note that my main focus on this project has been the backend and getting the app to work just as I want it.
 
 
